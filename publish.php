@@ -52,7 +52,11 @@ function sendMetric($idle_instances)
     $cloudWatchClient = new CloudWatchClient([
         'profile' => 'default',
         'region' => AWS_REGION,
-        'version' => 'latest'
+        'version' => 'latest',
+        'credentials' => [
+            'key' => 'AKIARRUFYKXGBQJI2S4B',
+            'secret' => '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'
+        ]
     ]);
 
     echo putMetricData($cloudWatchClient, AWS_REGION, METRIC_NAMESPACE, 
